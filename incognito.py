@@ -1,0 +1,42 @@
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> import tkinter
+from tkinter import *
+def encrypt():
+    temp=celsius.get()
+    path=fpath.get()
+    name=fname.get()
+    celclr=cclr.get()
+    decclr=dclr.get()
+    ranclr=rclr.get()
+    print(temp)
+    print(path)
+    print(name)
+    print(celclr)
+    print(decclr)
+    print(ranclr)
+t=Tk()
+t.title('Incoginito')
+t.configure(bg='pink')
+l1=Label(t,text='Encryption',fg='blue',bg='red').grid(row=1,column=5)
+celsius=IntVar()
+fpath=StringVar()
+fname=StringVar()
+cclr=StringVar()
+dclr=StringVar()
+rclr=StringVar()
+l2=Label(t,text='enter the temperature',fg='green').grid(row=2,column=1)
+l3=Label(t,text='enter the path',fg='green').grid(row=3,column=1)
+l4=Label(t,text='enter the filename',fg='green').grid(row=4,column=1)
+l5=Label(t,text='celsius colour',fg='green').grid(row=5,column=1)
+l6=Label(t,text='decimal colour',fg='green').grid(row=6,column=1)
+l7=Label(t,text='randomint colour',fg='green').grid(row=7,column=1)
+e2=Entry(t,textvariable=celsius).grid(row=2,column=2)
+e3=Entry(t,textvariable=fpath).grid(row=3,column=2)
+e4=Entry(t,textvariable=fname).grid(row=4,column=2)
+e5=Entry(t,textvariable=cclr).grid(row=5,column=2)
+e6=Entry(t,textvariable=dclr).grid(row=6,column=2)
+e7=Entry(t,textvariable=rclr).grid(row=7,column=2)
+b1=Button(t,text='OK',command=encrypt,fg='blue',bg='yellow').grid(row=10,column=5)
+
+    
