@@ -1,0 +1,98 @@
+e1=list(input())
+e2=list(input())
+c1=''
+c2=''
+sx1=''
+sx2=''
+sy1=''
+sy2=''
+for i in range(0,len(e1)):
+    if e1[i]=='x':
+        x1=e1[i-1]
+        if e1[i-2]=='-':
+            sx1=e1[i-2]
+            
+        
+    elif e1[i]=='y':
+        y1=e1[i-1]
+        if e1[i-2]=='-':
+            sy1=e1[i-2]
+        
+    elif e1[i]=='=':
+        j=i+1
+        while j<len(e1):
+            c1=c1+e1[j]
+            j=j+1
+    
+
+
+for i in range(0,len(e2)):
+    if e2[i]=='x':
+        x2=e2[i-1]
+        if e2[i-2]=='-':
+            sx2=e2[i-2]
+        
+        
+    elif e2[i]=='y':
+        y2=e2[i-1]
+        if e2[i-2]=='-':
+            sy2=e2[i-2]
+        
+    elif e2[i]=='=':
+        j=i+1
+        while j<len(e2):
+            c2=c2+e2[j]
+            j=j+1
+
+x1=sx1+x1
+
+y1=sy1+y1
+x2=sx2+x2
+y2=sy2+y2
+eq1=[]
+eq1.append(int(x1.strip()))
+eq1.append(int(y1.strip()))
+eq1.append(int(c1.strip()))
+
+eq2=[]
+eq2.append(int(x2.strip()))
+eq2.append(int(y2.strip()))
+eq2.append(int(c2.strip()))
+eq3=eq1[0:]
+eq4=eq2[0:]
+
+m1=eq2[0]
+m2=eq1[0]
+m3=eq4[1]
+m4=eq3[1]
+
+for i in range(0,len(eq1)):
+    eq1[i]=m1*eq1[i]
+
+for i in range(0,len(eq2)):
+    eq2[i]=m2*eq2[i]
+for i in range(0,len(eq3)):
+    eq3[i]=m3*eq3[i]
+
+for i in range(0,len(eq4)):
+    eq4[i]=m4*eq4[i]
+
+
+
+for i in range(0,len(eq1)):
+    eq1[i]=eq1[i]-eq2[i]
+print(eq1)
+
+for i in range(0,len(eq3)):
+    eq3[i]=eq3[i]-eq4[i]
+print(eq3)
+
+y=eq1[2]//eq1[1]
+x=eq3[2]//eq3[0]
+print('x=',x)
+print('y=',y)
+    
+
+
+
+
